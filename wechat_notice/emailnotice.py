@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Project: HelloWorldPython
+Project: wechat-notice
 Creator: DoubleThunder
 Create time: 2019-10-6 03:14
 Introduction:
@@ -45,11 +45,3 @@ class EmailNotice(WechatNotice):
             return self.return_fail
 
 
-if __name__ == '__main__':
-    email_user = 'sfyc23@qq.com'
-    email_password = 'yxayleefbersbjeg'
-    email_host = 'smtp.qq.com'
-    to_emails = ['doublethunder@qq.com', 'doublethunder23@qq.com']
-    notice = EmailNotice(user=email_user, password=email_password, host=email_host, to_emails=to_emails)
-    yy = notice.send('title', 'content')
-    print(yy)

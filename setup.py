@@ -1,8 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""
+Project: wechat-notice
+Creator: DoubleThunder
+Create time: 2019-10-06 00:33
+Introduction:
+"""
 
-# Note: To use the 'upload' functionality of this file, you must:
-#   $ pip install twine
 
 import io
 import os
@@ -30,7 +34,7 @@ current_dir = os.path.abspath(os.path.dirname(__file__))
 def get_meta():
     meta_re = re.compile(r"(?P<name>__\w+__) = '(?P<value>[^']+)'")
     meta_d = {}
-    with open(os.path.join(current_dir, 'pywubi','__init__.py'),
+    with open(os.path.join(current_dir, 'wechat_notice','__init__.py'),
               encoding='utf8') as fp:
         for match in meta_re.finditer(fp.read()):
             meta_d[match.group('name')] = match.group('value')
@@ -51,14 +55,14 @@ meta_d = get_meta()
 setup(
     name=meta_d['__title__'],
     version=meta_d['__version__'],
-    description='随时随地发消息到微信/工具.',
+    description='发消息通知给微信/工具.',
     long_description=long_description,
     long_description_content_type='text/markdown',
     author=meta_d['__author__'],
     author_email='sfyc23@gmail.com',
     license=meta_d['__license__'],
     python_requires='>=3.6.0',
-    url='https://github.com/sfyc23/python-notice',
+    url='https://github.com/sfyc23/wechat-notice',
     # packages=find_packages(exclude=('tests',)),
     packages=packages,
     # If your package is a single module, use this instead of 'packages':

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Project: HelloWorldPython
+Project: wechat-notice
 Creator: DoubleThunder
 Create time: 2019-10-06 00:33
 Introduction:
@@ -72,12 +72,4 @@ class NiucodataChanNotice(WechatNotice):
             return self.return_fail
 
 
-if __name__ == '__main__':
-    api = 'SCU63534Tfff306d1ea933cc6e62dd37d866e9a1c5d98cc7026f38'
-    # ![logo](https://raw.githubusercontent.com/sfyc23/image/master/vlog/20190614125724.png)
-    # scn = ServerChanNotice(api)
-    # yy = scn.set('qq')
-    openid = 'orZlx1nKTaqARkFZnwi8rrP08eKM'
-    notice = NiucodataChanNotice(openid=openid)
-    yy = notice.set('这是一个标题', '这是内容1')
-    print(yy)
+
