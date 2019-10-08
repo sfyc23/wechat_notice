@@ -1,37 +1,61 @@
-发消息给微信一些方法（还没有完成）
+Send Wechat a message at any time.(任何时刻给微信发送消息)
 =============================
-[![pypi](https://img.shields.io/badge/pypi-0.0.1-yellow.svg)](https://pypi.org/project/pywubi) 
+[![pypi](https://img.shields.io/badge/pypi-0.0.3-yellow.svg)](https://pypi.org/project/wechat-notice/) 
 ![python_vesion](https://img.shields.io/badge/python-%3E3-green.svg)  
 
    
-将汉字转为五笔码。现只支持 86 版编码。（ps:因为找到整理出 86 版五笔编码）
+主要用于服务器与微信之间的通信。
+实现方法：通过邮箱、公众号给微信发送消息。
 
 ## 关于
 
-* GitHub: https://github.com/sfyc23/python-wubi  
+* GitHub: https://github.com/sfyc23/wechat_notice  
 * License: MIT license  
-* PyPI: https://pypi.org/project/pywubi  
+* PyPI: https://pypi.org/project/wechat-notice/  
 * Python version: 3
 
-## 特性
+## 所使用的库
 
-1. 将词组转成五笔编码。比如词语：生死有命。换成五笔码为：'tgdw'；
-2. 返回汉字的所有可能的编码。如汉字：为 。换成五笔码为： 'ylyi', 'yly', 'yl', 'o'；
-3. 将一段句子，转成五笔码。如:天气不错，我们去散步吧!：五笔码为：'gdi', 'rnb', 'gii', 'qajg', '，', 'trnt', 'wun', 'fcu', 'aety', 'hir', 'kcn', '!'
+    requests
+    yagmail
 
 ## 安装
 
-    $ pip install pywubi
+    $ pip install wechat-notice
 
 ## 使用示例
 
-    >>> from pywubi import wubi
-    >>> wubi('我爱你')
-    ['trnt', 'epdc', 'wqiy']
-    >>> wubi('我爱你',multicode=True)  # 返回汉字的所有可能的五笔编码
-    [['trnt', 'trn', 'q'], ['epdc', 'epd', 'ep'], ['wqiy', 'wqi', 'wq']]
-    >>> wubi('我爱你', single=False) # 以词组的方法处理这些汉字
-    ['tewq']
+1、 使用邮箱。    
+
+需要微信绑定 『QQ邮箱提醒』。  
+绑定方法：设置 -> 通用 -> 辅助功能 -> QQ邮箱提醒 。
+
+```
+from wechat_notcie import EmailNotice
+notice = EmailNotice(user="token", password='',
+                            host='',to_emails=['1@163.com','2@qq.com'])
+notice.send('title','content')
+```
+
+2、使用 Server 酱。  
+
+Server 酱官网：http://sc.ftqq.com/3.version。需要关注公众号并申请 sckey。  
+```
+from wechat_notcie import ServerChanNotice
+notice = ServerChanNotice(sckey='你申请的sckey')
+notice.send('这是一个标题','这是内容')
+```
+
+3、使用推了噜。  
+
+面包多官网：https://m.niucodata.com/tui。需要关注公众号并申请 openid。    
+```
+from wechat_notcie import ServerChanNotice
+notice = NiucodataChanNotice(openid='你申请的openid')
+notice.send('这是一个标题','这是内容')
+```
+
+
 
 ## Lincese
 

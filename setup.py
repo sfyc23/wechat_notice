@@ -14,11 +14,11 @@ import sys
 from shutil import rmtree
 
 NAME = 'wechat_notice'
-DESCRIPTION = 'Send Wechat a message at any time.'
+DESCRIPTION = 'Send Wechat a message at any time.(任何时刻给微信发送消息)'
 URL = 'https://github.com/sfyc23/wechat_notice'
 EMAIL = 'sfyc23@gmail.com'
 AUTHOR = 'DoubleThunder'
-VERSION = '0.0.03'
+VERSION = '0.0.04'
 
 
 # What packages are required for this module to be executed?
@@ -126,6 +126,9 @@ setup(
     #         'upload': UploadCommand,
     # },
 )
+
+# python setup.py sdist bdist_wheel
+# twine upload dist/*
 
 
 

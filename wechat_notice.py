@@ -58,7 +58,7 @@ class ServerChanNotice(WechatNotice):
     官网：http://sc.ftqq.com/3.version
     使用：
     notice = ServerChanNotice(sckey='你申请的sckey')
-    yy = notice.set('这是一个标题','这是内容')
+    notice.send('这是一个标题','这是内容')
     需要安装 requests 才可使用。
     """
 
@@ -115,7 +115,7 @@ class NiucodataChanNotice(WechatNotice):
     官网：https://m.niucodata.com/tui
     使用：
     notice = NiucodataChanNotice(openid='你申请的openid')
-    yy = notice.set('这是一个标题','这是内容')
+    notice.send('这是一个标题','这是内容')
     需要安装 requests 才可使用。
     """
     __URL__ = 'https://m.niucodata.com/yo'
