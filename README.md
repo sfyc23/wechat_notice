@@ -39,7 +39,7 @@ notice.send('title','content')
 
 2、使用 Server 酱。  
 
-Server 酱官网：http://sc.ftqq.com/3.version。需要关注公众号并申请 sckey。  
+Server 酱官网：<http://sc.ftqq.com/3.version>。需要关注公众号并申请 sckey。  
 ```
 from wechat_notcie import ServerChanNotice
 notice = ServerChanNotice(sckey='你申请的sckey')
@@ -48,7 +48,7 @@ notice.send('这是一个标题','这是内容')
 
 3、使用推了噜。  
 
-面包多官网：https://m.niucodata.com/tui。需要关注公众号并申请 openid。    
+面包多官网：<https://m.niucodata.com/tui>。需要关注公众号并申请 openid。    
 ```
 from wechat_notcie import ServerChanNotice
 notice = NiucodataChanNotice(openid='你申请的openid')
